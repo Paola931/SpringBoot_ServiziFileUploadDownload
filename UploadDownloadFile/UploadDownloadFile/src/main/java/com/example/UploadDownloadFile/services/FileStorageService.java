@@ -40,7 +40,7 @@ public class FileStorageService {
     public byte[] download(String fileName) throws IOException {
         File fileFromRepo = new File(fileRepositoryFolder + "\\" + fileName);
         if(!fileFromRepo.exists()) throw new IOException("file does not exists");
-       return IOUtils.toByteArray(new FileInputStream(fileRepositoryFolder));
+       return IOUtils.toByteArray(new FileInputStream(fileFromRepo));
     }
 
     @SneakyThrows
